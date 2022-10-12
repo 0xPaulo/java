@@ -5,13 +5,9 @@ public abstract class Moeda {
         this.valor = valor;
     }
 
-    abstract void info();
-
     abstract double converter();
 
-    public double getValor() {
-        return valor;
-    }
+    abstract void info();
 
     @Override
     public boolean equals(Object obj) {

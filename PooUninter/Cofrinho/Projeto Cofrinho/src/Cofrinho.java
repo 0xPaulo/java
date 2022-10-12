@@ -12,14 +12,14 @@ public class Cofrinho {
         listaMoedas.remove(i);
     }
 
-public boolean verificaRemover(){
-    listaMoedas.isEmpty();
-    return true;
-}
+    public boolean verificaRemover() {
+        listaMoedas.isEmpty();
+        return true;
+    }
 
-    public void verificaVazio(){
-        if(listaMoedas.isEmpty())
-        System.out.println("Sua conta esta vazia");
+    public void verificaVazio() {
+        if (listaMoedas.isEmpty())
+            System.out.println("Sua conta esta vazia");
     }
 
     public void listagemMoedas() {
@@ -36,9 +36,9 @@ public boolean verificaRemover(){
             total += i.converter();
 
         }
+        System.out.println();
         System.out.println("Todo seu dinheiro convertido para reais: " + total);
-        
+        System.out.println();
     }
 
-    
 }

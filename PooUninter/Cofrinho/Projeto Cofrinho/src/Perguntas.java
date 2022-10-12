@@ -1,6 +1,7 @@
 public class Perguntas {
 
     public void menuPrincipal(){
+        System.out.println();
         System.out.println("COFRINHO");
         System.out.println("----------");
         System.out.println("1 - Adicionar Moeda");

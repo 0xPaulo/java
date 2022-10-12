@@ -7,11 +7,12 @@ public class Main {
         double valorMoedaRetirada;
         double tipoMoeda;
         int escolha;
-        erroOcorreu = 0;
+        String nome;
         Scanner input = new Scanner(System.in);
         Cofrinho cofrinho = new Cofrinho();
         Perguntas perguntas = new Perguntas();
 
+        erroOcorreu = 0;
         while (erroOcorreu == 0) {
             try {
                 perguntas.menuPrincipal();
@@ -33,13 +34,22 @@ public class Main {
                             Moeda moeda = null;
                             if (tipoMoeda == 1) {
                                 moeda = new Real(valorMoedaDeposito);
+                                nome = "Real";
+                                System.out.println();
+                                System.out.println("Foi depositado o Valor: " + nome + ": " + valorMoedaDeposito);
                             } else if (tipoMoeda == 2) {
                                 moeda = new Dolar(valorMoedaDeposito);
+                                nome = "Dolar";
+                                System.out.println();
+                                System.out.println("Foi depositado o Valor: " + nome + ": " + valorMoedaDeposito);
                             } else if (tipoMoeda == 3) {
                                 moeda = new Euro(valorMoedaDeposito);
+                                nome = "Euro";
+                                System.out.println();
+                                System.out.println("Foi depositado o Valor: " + nome + ": " + valorMoedaDeposito);
                             }
                             cofrinho.adicionar(moeda);
-                            System.out.println("Depositado com sucesso: " + valorMoedaDeposito);
+
                             break;
 
                         case 2:
@@ -56,19 +66,31 @@ public class Main {
                             moeda = null;
                             if (tipoMoeda == 1) {
                                 moeda = new Real(valorMoedaRetirada);
+                                nome = "Real";
+                                System.out.println();
+                                System.out.println("Foi retirado: " + nome + ": " + valorMoedaRetirada);
                             } else if (tipoMoeda == 2) {
                                 moeda = new Dolar(valorMoedaRetirada);
+                                nome = "Dolar";
+                                System.out.println();
+                                System.out.println("Foi retirado: " + nome + ": " + valorMoedaRetirada);
                             } else if (tipoMoeda == 3) {
                                 moeda = new Euro(valorMoedaRetirada);
+                                nome = "Euro";
+                                System.out.println();
+                                System.out.println("Foi retirado: " + nome + ": " + valorMoedaRetirada);
                             }
                             cofrinho.remover(moeda);
+
                             break;
 
                         case 3:
+                            System.out.println();
                             cofrinho.listagemMoedas();
                             break;
 
                         case 4:
+                            System.out.println();
                             cofrinho.totalConvertido();
                             break;
 
@@ -77,6 +99,7 @@ public class Main {
                             break;
 
                         default:
+                            System.out.println();
                             System.out.println("Opcao invalida tente novamente");
                             System.out.println();
                     }
@@ -85,6 +108,7 @@ public class Main {
                     escolha = input.nextInt();
                 }
             } catch (Exception e) {
+                System.out.println();
                 System.out.println("Voce digitou alguma coisa errado, tente novamente");
                 System.out.println();
                 input.nextLine();
