@@ -1,13 +1,13 @@
 public class Perguntas {
 
     public void menuPrincipal(){
-        System.out.println("Menu");
+        System.out.println("COFRINHO");
         System.out.println("----------");
-        System.out.println("1 - Adicionar moeda");
-        System.out.println("2 - Remover moeda");
-        System.out.println("3 - Listar moeda");
-        System.out.println("4 - Calcular total convertido para real");
-        System.out.println("0 - Encerar");
+        System.out.println("1 - Adicionar Moeda");
+        System.out.println("2 - Remover Moeda");
+        System.out.println("3 - Listar Moedas");
+        System.out.println("4 - Calcular total convertido para Real");
+        System.out.println("5 - Sair");
         System.out.println("----------");
     }
 

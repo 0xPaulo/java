@@ -10,18 +10,11 @@ public class Main {
         erroOcorreu = 0;
         Scanner input = new Scanner(System.in);
         Cofrinho cofrinho = new Cofrinho();
+        Perguntas perguntas = new Perguntas();
 
         while (erroOcorreu == 0) {
             try {
-                System.out.println("Menu");
-                System.out.println("----------");
-                System.out.println("1 - Adicionar");
-                System.out.println("2 - Remover");
-                System.out.println("3 - Listar");
-                System.out.println("4 - Converter tudo para Real");
-                System.out.println("0 - Exit");
-                System.out.println("----------");
-                
+                perguntas.menuPrincipal();
 
                 escolha = input.nextInt();
 
@@ -31,14 +24,9 @@ public class Main {
                         case 1:
                             tipoMoeda = 0;
                             while (tipoMoeda > 3 || tipoMoeda <= 0) {
-                                System.out.println("----------");
-                                System.out.println("Escolha a moeda que deseja depoistar:");
-                                System.out.println("1 - Real");
-                                System.out.println("2 - Dolar");
-                                System.out.println("3 - Euro");
-                                System.out.println("----------");
+                                perguntas.menuDepositar();
                                 tipoMoeda = input.nextInt();
-                                System.out.println();
+                                System.out.println("----------");
                             }
                             System.out.println("Qual o valor que deseja depositar? ");
                             valorMoedaDeposito = input.nextDouble();
@@ -51,16 +39,14 @@ public class Main {
                                 moeda = new Euro(valorMoedaDeposito);
                             }
                             cofrinho.adicionar(moeda);
+                            System.out.println("Depositado com sucesso: " + valorMoedaDeposito);
                             break;
 
                         case 2:
-                        cofrinho.verificaVazio();
+                            cofrinho.verificaVazio();
                             tipoMoeda = 0;
                             while (tipoMoeda > 3 || tipoMoeda <= 0) {
-                                System.out.println("Escolha a moeda que deseja remover:");
-                                System.out.println("1 - Real");
-                                System.out.println("2 - Dolar");
-                                System.out.println("3 - Euro");
+                                perguntas.menuRemover();
                                 tipoMoeda = input.nextInt();
                                 System.out.println();
                             }
@@ -86,24 +72,21 @@ public class Main {
                             cofrinho.totalConvertido();
                             break;
 
+                        case 5:
+                            System.exit(0);
+                            break;
+
                         default:
                             System.out.println("Opcao invalida tente novamente");
                             System.out.println();
                     }
 
-                    System.out.println();
-                    System.out.println("Menu");
-                    System.out.println("----------");
-                    System.out.println("1 - Adicionar");
-                    System.out.println("2 - Remover");
-                    System.out.println("3 - Listar");
-                    System.out.println("4 - Converter tudo para Real");
-                    System.out.println("0 - Exit");
-                    System.out.println("----------");
+                    perguntas.menuPrincipal();
                     escolha = input.nextInt();
                 }
             } catch (Exception e) {
                 System.out.println("Voce digitou alguma coisa errado, tente novamente");
+                System.out.println();
                 input.nextLine();
                 erroOcorreu = 0;
             }

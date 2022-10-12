@@ -39,4 +39,6 @@ public boolean verificaRemover(){
         System.out.println("Todo seu dinheiro convertido para reais: " + total);
         
     }
+
+    
 }
