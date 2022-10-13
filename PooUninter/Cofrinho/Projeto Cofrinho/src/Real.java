@@ -1,19 +1,21 @@
 public class Real extends Moeda {
 
+    // --------CONSTRUTOR---------------
     public Real(double valor) {
         super(valor);
-
     }
 
+    // --------FUNÇÕES------------------
     public double converter() {
         double convertido = valor * 1;
         return convertido;
     }
 
-    public void info() {
+    void info() {
         System.out.println("Real: " + valor);
     }
 
+    // -------VALIDAÇÃO------------------
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

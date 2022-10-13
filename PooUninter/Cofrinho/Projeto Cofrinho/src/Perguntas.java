@@ -1,5 +1,6 @@
 public class Perguntas {
 
+    // ------------FUNÇÕES---------------------------------------------
     public void menuPrincipal() {
         System.out.println();
         System.out.println("COFRINHO");

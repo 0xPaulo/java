@@ -1,9 +1,11 @@
 public class Euro extends Moeda {
 
+    // --------CONSTRUTOR---------------
     public Euro(double valor) {
         super(valor);
     }
 
+    // --------FUNÇÕES------------------
     public double converter() {
         double convertido = valor * 5.05;
         return convertido;
@@ -13,6 +15,7 @@ public class Euro extends Moeda {
         System.out.println("Euro: " + valor);
     }
 
+    // -------VALIDAÇÃO------------------
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

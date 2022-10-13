@@ -2,8 +2,10 @@ import java.util.ArrayList;
 
 public class Cofrinho {
 
+    // -----------INSTANCIANDO-ARRAY----------------------------------
     private ArrayList<Moeda> listaMoedas = new ArrayList<Moeda>();
 
+    // ------------FUNÇÕES---------------------------------------------
     public void adicionar(Moeda i) {
         listaMoedas.add(i);
     }
@@ -33,14 +35,10 @@ public class Cofrinho {
     public void totalConvertido() {
         double total = 0;
         if (listaMoedas.isEmpty())
-        System.out.println("Sua conta esta vazia");
+            System.out.println("Sua conta esta vazia");
         for (Moeda i : listaMoedas) {
             total += i.converter();
-
         }
-
         System.out.println("Todo seu dinheiro convertido para reais: " + total);
-
     }
-
 }
