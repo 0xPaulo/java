@@ -32,13 +32,15 @@ public class Cofrinho {
 
     public void totalConvertido() {
         double total = 0;
+        if (listaMoedas.isEmpty())
+        System.out.println("Sua conta esta vazia");
         for (Moeda i : listaMoedas) {
             total += i.converter();
 
         }
-        System.out.println();
+
         System.out.println("Todo seu dinheiro convertido para reais: " + total);
-        System.out.println();
+
     }
 
 }

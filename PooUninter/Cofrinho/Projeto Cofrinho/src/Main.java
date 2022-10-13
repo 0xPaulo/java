@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        int erroOcorreu;
         double valorMoedaDeposito;
         double valorMoedaRetirada;
         double tipoMoeda;
@@ -11,12 +10,12 @@ public class Main {
         Scanner input = new Scanner(System.in);
         Cofrinho cofrinho = new Cofrinho();
         Perguntas perguntas = new Perguntas();
+        boolean continua = true;
 
-        erroOcorreu = 0;
-        while (erroOcorreu == 0) {
+        do {
             try {
-                perguntas.menuPrincipal();
 
+                perguntas.menuPrincipal();
                 escolha = input.nextInt();
 
                 while (escolha != 0) {
@@ -99,22 +98,19 @@ public class Main {
                             break;
 
                         default:
-                            System.out.println();
-                            System.out.println("Opcao invalida tente novamente");
-                            System.out.println();
+                            perguntas.msgDefault();
                     }
-
                     perguntas.menuPrincipal();
                     escolha = input.nextInt();
                 }
-            } catch (Exception e) {
-                System.out.println();
-                System.out.println("Voce digitou alguma coisa errado, tente novamente");
-                System.out.println();
+            } catch (Exception erro) {
+                perguntas.msgErro();
                 input.nextLine();
-                erroOcorreu = 0;
+
+                continua = true;
             }
-        }
+        } while (continua);
+
         input.close();
     }
 
